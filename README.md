@@ -1,10 +1,10 @@
 <div align="center">
 
-# 🧠 NeuroPrice  
+# ⚡ PricePulse  
 ### *Hyper-Personalized Dynamic Pricing Engine*
 
 Built for the **Walmart A+ Sparkathon 2025**  
-Where neuroscience meets pricing intelligence.
+*Precision in Pricing. Personalization at Scale.*
 
 </div>
 
@@ -12,29 +12,39 @@ Where neuroscience meets pricing intelligence.
 
 ## 🚀 Overview
 
-**NeuroPrice** is an AI-powered pricing engine that delivers personalized discounts in real-time by analyzing customer behavior, predicting purchase intent, and optimizing prices dynamically.
+**PricePulse** is an intelligent, AI-powered pricing engine that dynamically adjusts product prices for each customer based on real-time data. It uses a powerful blend of:
 
-It intelligently adjusts prices based on:
-- **Customer segmentation**
-- **Conversion likelihood**
-- **Behavior-driven price optimization**
+- 🔍 **Customer Segmentation**
+- 🧠 **Conversion Prediction**
+- 💰 **Price Optimization**
 
-🎯 The goal?  
-Boost **conversion rates**, drive **customer loyalty**, and **maximize revenue** — all without compromising fairness or profitability.
+to deliver personalized discounts that **increase conversions**, **maximize profit**, and **enhance customer satisfaction**.
 
 ---
 
-## 🧠 Key Features
+## 🔑 Key Features
 
-- 🔍 **Customer Segmentation:** Behavioral clustering using ML
-- 📈 **Conversion Model:** Predicts likelihood of a user completing a purchase
-- 💰 **Dynamic Pricing:** Personalized prices based on data-driven decision-making
-- 🧾 **Explainable Outputs:** Understand *why* a customer received a particular price
-- 🧪 **Modular ML Pipeline:** Easily extendable and API-ready
+- 🧬 **Behavior-Based Segmentation**  
+  Clusters users based on shopping patterns, loyalty, and value.
+
+- 🎯 **Conversion Likelihood Estimation**  
+  Predicts the probability of a customer making a purchase at a given price.
+
+- 💸 **Personalized Price Generator**  
+  Offers the ideal discounted price that maximizes revenue while improving user experience.
+
+- 🛠️ **Modular Pipeline**  
+  Clean, testable, and extensible for enterprise integration.
 
 ---
 
-## 🧬 Architecture
+## 🧠 Architecture
 
 ```plaintext
-User Data → Segmentation Model → Conversion Model → Pricing Engine → Personalized Price
+Customer Data ──▶ Segmentation Model
+                        │
+                        ▼
+          Cart Data ──▶ Conversion Model
+                        │
+                        ▼
+             Product Data ─▶ Price Optimization Engine ─▶ Final Personalized Price
