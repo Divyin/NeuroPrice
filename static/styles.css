@@ -1,0 +1,300 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* A modern, clean font */
+    background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Light gradient background */
+    color: #343a40; /* Dark gray for text */
+}
+
+/* Custom Scrollbar (for better aesthetics) */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Navbar Enhancements */
+.navbar {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(to right, #007bff, #0056b3); /* Darker blue gradient for navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700; /* Bolder font weight */
+    color: #ffffff !important; /* White text */
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); /* Light glow on logo */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e0f7fa !important; /* Lighter hover color */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.ms-auto .btn {
+    font-weight: 500;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.ms-auto .btn-light {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border-color: #f8f9fa;
+}
+.ms-auto .btn-light:hover {
+    background-color: #e2e6ea;
+    color: #0056b3;
+}
+
+.ms-auto .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #343a40;
+}
+.ms-auto .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+.ms-auto .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.ms-auto .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.ms-auto .btn-outline-light {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+.ms-auto .btn-outline-light:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+/* Badge for user info */
+.badge.bg-info.text-dark {
+    background-color: #b3e5fc !important;
+    color: #01579b !important;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5rem;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+
+/* Card and Section Styling */
+.container.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+h2, h5 {
+    font-weight: 700;
+    color: #007bff; /* Primary blue for headings */
+}
+
+.card {
+    border-radius: 12px; /* Rounded corners for cards */
+    overflow: hidden; /* Ensures content respects border-radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.card-title {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: #fff; /* Ensure text is readable */
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Specific Page Styling */
+
+/* index.html banner */
+.container-fluid.p-0 img {
+    object-fit: cover;
+    object-position: center;
+    max-height: 500px; /* Consistently sized banner */
+    border-radius: 0 0 15px 15px; /* Rounded bottom corners for banner */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* shop.html product cards */
+.product-card .card-img-top {
+    height: 180px; /* Consistent image height */
+    object-fit: cover;
+    border-radius: 12px 12px 0 0; /* Match card border-radius */
+}
+
+.product-card .card-body {
+    padding: 1.25rem;
+}
+.product-card .add-to-cart-btn {
+    font-weight: 600;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #343a40;
+}
+.product-card .add-to-cart-btn:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+/* cart.html list items */
+.list-group-item {
+    border-radius: 8px; /* Slightly rounded list items */
+    margin-bottom: 8px; /* Space between items */
+    border: 1px solid #dee2e6;
+}
+.list-group-item:last-child {
+    margin-bottom: 0;
+}
+
+.alert {
+    border-radius: 8px;
+    font-weight: 500;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* Input Fields and Buttons */
+.form-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.075);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Utility Classes */
+.fw-bold { font-weight: 700 !important; }
+.text-primary { color: #007bff !important; }
+.text-success { color: #28a745 !important; }
+.text-danger { color: #dc3545 !important; }
+.text-muted { color: #6c757d !important; }
+
+/* Animations (Animate.css integration) */
+.animated {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+.fadeIn { animation-name: fadeIn; }
+.bounceIn { animation-name: bounceIn; } /* Example for image in shop */
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translate3d(0, 50px, 0); opacity: 0; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+.list-group-item.animate__animated.animate__fadeInLeft {
+    animation-name: fadeInLeft;
+}
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-20px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Specific button highlight for active state (e.g. predicting) */
+.highlight-button {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+        transform: scale(0.98);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+        transform: scale(1);
+    }
+}

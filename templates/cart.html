@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart | PricePulse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/walmart-logo.png') }}">
+</head>
+<body class="bg-light">
+
+  {% include 'navbar.html' %}
+
+  <div class="container py-5">
+    <h2 class="mb-4 text-center animate__animated animate__fadeInDown">🧾 Your Shopping Cart</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-lg p-4 animate__animated animate__fadeIn">
+          <ul class="list-group list-group-flush mb-4" id="cartItems">
+            <li id="noItemsMessage" class="list-group-item text-center text-muted border-0 d-none">Your cart is empty. Why not <a href="{{ url_for('shop') }}">add some items</a>?</li>
+          </ul>
+
+          <h5 class="mb-3">Total Original Price: <span class="text-primary fw-bold">₹<span id="totalOriginalPrice">0.00</span></span></h5>
+          <h5 class="mb-3">Total Payable Price: <span class="text-success fw-bold">₹<span id="totalCalculatedPrice">0.00</span></span></h5>
+
+
+          <!-- Smart Price Offer -->
+          <div id="predictedSection" class="mt-4 p-3 border rounded bg-success-subtle d-none animate__animated animate__fadeIn">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h5 class="mb-1 text-success">🎯 Personalized Offer Available!</h5>
+                <p class="mb-0 text-muted"><strong>Smart Price for Cart:</strong> <span id="predictedValue" class="fw-bold fs-5 text-success">₹0.00</span></p>
+                <div class="form-text text-muted">A special price has been predicted for your entire cart based on your profile!</div>
+              </div>
+              <button class="btn btn-outline-success btn-lg ms-3 animate__animated animate__pulse animate__infinite" id="applySmartPriceBtn">Apply Smart Price</button>
+            </div>
+          </div>
+
+          <!-- Payment Options -->
+          <div class="mt-auto p-3 border rounded bg-light-subtle">
+            <h5 class="mb-3">💳 Choose Payment Method</h5>
+            <select class="form-select mb-3" id="paymentMethod" aria-label="Payment Method Selection">
+              <option value="UPI">UPI</option>
+              <option value="Credit/Debit Card">Credit/Debit Card</option>
+              <option value="Net Banking">Net Banking</option>
+            </select>
+            <button class="btn btn-success w-100 btn-lg shadow-sm" id="payNowBtn">Pay Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="ding" src="https://assets.mixkit.co/sfx/preview/mixkit-bonus-earned-in-video-game-2058.mp3" preload="auto"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+      window.INDEX_URL = "{{ url_for('index') }}";
+      window.CART_URL = "{{ url_for('cart') }}"; // Also defined for consistency, though not strictly needed here
+  </script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | PricePulse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/walmart-logo.png') }}">
+</head>
+<body class="bg-light">
+  {% include 'navbar.html' %}
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-7">
+        <h2 class="mb-4 text-center animate__animated animate__fadeInDown">📝 Join PricePulse Today!</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }} animate__animated animate__fadeIn" role="alert">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div class="card shadow-lg animate__animated animate__zoomIn">
+          <div class="card-body p-4">
+            <form action="{{ url_for('register') }}" method="POST">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" value="{{ user_data.username if user_data else '' }}" required aria-label="Username">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" required aria-label="Password">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ user_data.name if user_data else '' }}" required aria-label="Full Name">
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="age" class="form-label">Age</label>
+                  <input type="number" class="form-control" id="age" name="age" min="1" max="120" value="{{ user_data.age if user_data else '' }}" required aria-label="Age">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="gender" class="form-label">Gender</label>
+                  <select class="form-select" id="gender" name="gender" required aria-label="Gender Selection">
+                    <option value="">Select Gender</option>
+                    {% for gender_opt in genders %}
+                      <option value="{{ gender_opt }}" {% if user_data and user_data.gender == gender_opt %}selected{% endif %}>{{ gender_opt }}</option>
+                    {% endfor %}
+                  </select>
+                  <div class="form-text">Choose from: {{ genders|join(', ') }}</div>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <select class="form-select" id="city" name="city" required aria-label="City Selection">
+                  <option value="">Select City</option>
+                  {% for city_opt in cities %}
+                    <option value="{{ city_opt }}" {% if user_data and user_data.city == city_opt %}selected{% endif %}>{{ city_opt }}</option>
+                  {% endfor %}
+                </select>
+                <div class="form-text">Choose from: {{ cities|join(', ') }}</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="occupation" class="form-label">Occupation</label>
+                <select class="form-select" id="occupation" name="occupation" required aria-label="Occupation Selection">
+                  <option value="">Select Occupation</option>
+                  {% for occ_opt in occupations %}
+                    <option value="{{ occ_opt }}" {% if user_data and user_data.occupation == occ_opt %}selected{% endif %}>{{ occ_opt }}</option>
+                  {% endfor %}
+                </select>
+                <div class="form-text">Choose from: {{ occupations|join(', ') }}</div>
+              </div>
+
+              <div class="mb-4">
+                <label for="loyalty_tier" class="form-label">Loyalty Tier</label>
+                <select class="form-select" id="loyalty_tier" name="loyalty_tier" required aria-label="Loyalty Tier Selection">
+                  <option value="">Select Loyalty Tier</option>
+                  {% for tier_opt in loyalty_tiers %}
+                    <option value="{{ tier_opt }}" {% if user_data and user_data.loyalty_tier == tier_opt %}selected{% endif %}>{{ tier_opt }}</option>
+                  {% endfor %}
+                </select>
+                <div class="form-text">Choose from: {{ loyalty_tiers|join(', ') }}</div>
+              </div>
+
+              <!-- User Product Count is NOT entered by user during registration -->
+              <!-- The user_product_count input from previous version is REMOVED from here -->
+              
+              <!-- Employee registration is REMOVED -->
+
+              <button type="submit" class="btn btn-success w-100 btn-lg shadow-sm">Register</button>
+            </form>
+            <p class="mt-4 text-center">Already have an account? <a href="{{ url_for('login') }}" class="text-primary fw-bold">Login here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
